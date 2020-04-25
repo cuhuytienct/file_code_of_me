@@ -1,0 +1,65 @@
+using System;
+
+namespace kk_tien
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] a = new int[100];
+            int n;
+            Console.WriteLine("nhap vao so luong phan tu mang a{0}:");
+            n = int.Parse(Console.ReadLine());
+
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write("nhap mảng a[] o vi trí thu{0}:", i);
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write(a[i]);
+                Console.Write(" ");
+            }
+            int max = int.MinValue;
+            for (int i = 1; i <= n; i++)
+            {
+                if (max < a[i])
+                {
+                    max = a[i];
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("GTLN:{0}", max);
+            int min = int.MaxValue;
+            for (int i = 1; i <= n; i++)
+            {
+                if (min > a[i])
+                {
+                    min = a[i];
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("GTNN:{0}", min);
+            int trungmax = -1;
+            for (int i = 1; i <= n; i++)
+            {
+                if (a[i] == max)
+                {
+                    trungmax += 1;
+                }
+            }
+            Console.WriteLine("co {0} gia tri trung max", trungmax);
+            int trungmin = -1;
+            for (int i = 1; i <= n; i++)
+            {
+                if (a[i] == min)
+                {
+                    trungmin += 1;
+                }
+            }
+            Console.WriteLine("co {0} gia tri trung min", trungmin);
+        }
+    }
+}
